@@ -6,7 +6,9 @@
 }
 
 body{
-    background:linear-gradient(180deg,#FFEAF2,#FFD9E8);
+    background:linear-gradient(135deg,#ffe8f1,#ffd9ea,#fff2f7);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
     min-height:100vh;
     display:flex;
     justify-content:center;
@@ -84,4 +86,10 @@ button:active{
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
