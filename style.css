@@ -10,13 +10,16 @@ body{
     background-size:400% 400%;
     animation:bgMove 12s ease infinite;
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
+    height:auto;
+    display:block;
     padding:40px 0;
     overflow-y:auto;
-    overflow-x:hidden;
+    overflow:visible;
     color:#444;
+}
+
+.container{
+    margin:40px auto;
 }
 
 .container{
