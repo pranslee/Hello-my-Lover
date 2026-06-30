@@ -27,6 +27,13 @@ body{
     padding:35px;
     text-align:center;
     box-shadow:0 10px 40px rgba(0,0,0,.12);
+    border:1px solid rgba(255,255,255,.5);
+    transition:.4s;
+}
+
+.container:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 60px rgba(255,105,180,.18);
 }
 
 h1{
