@@ -76,6 +76,11 @@ button:active{
     animation:fade .5s ease;
 }
 
+#letter p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 @keyframes fade{
     from{
         opacity:0;
