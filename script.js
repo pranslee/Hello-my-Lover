@@ -1,12 +1,6 @@
-function showLetter() {
-    const letter = document.getElementById("letter");
-    if (letter.style.display === "block") {
-        letter.style.display = "none";
-    } else {
-        letter.style.display = "block";
-    }
-}
-
+// =============================
+// Anniversary Counter
+// =============================
 const anniversary = new Date("2026-01-13T00:00:00");
 
 function updateCounter() {
@@ -27,8 +21,37 @@ function updateCounter() {
         months += 12;
     }
 
-    document.getElementById("counter").innerHTML =
-        `❤️ Together for<br><strong>${years} Years ${months} Months ${days} Days</strong>`;
+    const counter = document.getElementById("counter");
+
+    if (counter) {
+        counter.innerHTML =
+            `❤️ Together for<br><strong>${years} Years ${months} Months ${days} Days</strong>`;
+    }
 }
 
 updateCounter();
+
+
+// =============================
+// Smooth Page Transition
+// =============================
+const openLetter = document.getElementById("openLetter");
+
+if (openLetter) {
+    openLetter.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity .45s ease";
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 450);
+    });
+}
+
+
+// Fade in every page
+window.addEventListener("pageshow", () => {
+    document.body.style.opacity = "1";
+});
