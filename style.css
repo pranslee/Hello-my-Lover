@@ -119,3 +119,34 @@ h1{
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
+
+.letter-page{
+    max-width:700px;
+    margin:auto;
+    animation:fade .8s ease;
+}
+
+.letter-card{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.back-button{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#d85b94;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back-button:hover{
+    opacity:.8;
+}
+
+.letter-text{
+    text-align:justify;
+    line-height:2;
+    margin-bottom:24px;
+}
