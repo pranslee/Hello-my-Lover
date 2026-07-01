@@ -77,16 +77,16 @@ h1{
     transform:scale(.96);
 }
 
-#letter{
+.letter-content{
     text-align:left;
     margin-top:30px;
     line-height:1.9;
     animation:fade .5s ease;
 }
 
-#letter p{
-    text-align: justify;
-    text-justify: inter-word;
+.letter-content p{
+    text-align:justify;
+    text-justify:inter-word;
 }
 
 @keyframes fade{
