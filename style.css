@@ -24,16 +24,16 @@ body{
 
 .container{
     width:95%;
-    max-width:700px;
-    background:rgba(255,255,255,0.35);
+    max-width:900px;
+    margin:40px auto;
+    background:rgba(255,255,255,.35);
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
     border-radius:30px;
-    padding:35px;
+    padding:25px;
     text-align:center;
     box-shadow:0 10px 40px rgba(0,0,0,.12);
     border:1px solid rgba(255,255,255,.5);
-    transition:.4s;
 }
 
 .container:hover{
@@ -120,20 +120,17 @@ h1{
 }
 
 .letter-page{
-    max-width:700px;
-    margin:auto;
-    animation:fade .8s ease;
+    max-width:900px;
+    width:95%;
+    margin:40px auto;
 }
 
 .letter-card{
+    width:100%;
     background:white;
     border-radius:25px;
-    padding:45px;
-    width:100%;
-    max-width:700px;
-    margin:auto;
+    padding:50px;
     box-shadow:0 12px 35px rgba(0,0,0,.12);
-    animation:letterOpen .8s ease;
 }
 
 .back-button{
