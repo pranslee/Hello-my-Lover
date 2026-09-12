@@ -12,75 +12,385 @@
 <body>
 
 <div class="container letter-page">
-    
-<div class="letter-card">
 
-<a href="index.html" class="back-button">← Back Home</a>
 
-<h1>For You ❤️</h1>
+    <!-- =========================================
+         LETTER SELECTION
+         ========================================= -->
 
-<div class="letter-content">
+    <div class="letter-card" id="letter-selection">
 
-<p class="letter-text">
-Hi mahal, to be honest, I do not really know what I should write or say to you. The pressure of thinking of pleasing you always and thinking that a simple letter wouldn’t impress you keeps crushing me. But maybe I guess I will just let my heart speak.
-</p>
+        <a href="index.html" class="back-button">
+            ← Back Home
+        </a>
 
-<p class="letter-text">
-The moment my feelings developed for you, I always knew life would be very peaceful. I saw peace in your eyes and I saw forever in your smiles. I had sleepless nights thinking about how our life could be if we end up loving each other. And now I kept having sleepless nights working for us to secure our future haha. I just love how things are still the same but with a different goal.
-</p>
+        <h1>For You ❤️</h1>
 
-<p class="letter-text">
-My heart never lies, and I always follow it. Right from the very moment my heart beat skips, I knew I’m in love with you. But that’s a childish thing to say, so I tried to prove it.
-</p>
+        <p class="selection-subtitle">
+            I have something special waiting for you. 💌
+        </p>
 
-<p class="letter-text">
-I spoke with you.
-</p>
+        <p class="selection-question">
+            Which letter would you like to open?
+        </p>
 
-<p class="letter-text">
-I bonded with you.
-</p>
 
-<p class="letter-text">
-I dated you.
-</p>
+        <div class="letter-options">
 
-<p class="letter-text">
-And I tried my best to know more about you.
-</p>
+            <!-- FIRST LETTER -->
+            <button class="letter-option" onclick="openLetter('first')">
 
-<p class="letter-text">
-It seems to me that the more deeply I dive, the more I cultivate my feelings.
-</p>
+                <div class="envelope-icon">
+                    💌
+                </div>
 
-<p class="letter-text">
-I’m always so nervous when you’re trying to ask me “why do you love me?” Or when you were asking me “give me reasons why you love me.” I really don’t know and I’m just too pressured that I might not satisfy your expectations or you might not be impressed by how shallow my words could be when being asked on the spot huhu.
-</p>
+                <h2>My First Letter</h2>
 
-<p class="letter-text">
-But maybe with this, I hope you know that my love for you is genuine. You said feelings fade, right? Well, maybe they do, I agree. Feelings are transient—they visit and depart. Love, however, is not measured by the intensity of emotion but by the constancy of devotion. If feelings are the spark, love is the flame that continues to burn long after the spark has disappeared.
-</p>
+                <p>
+                    The letter I wrote from my heart.
+                </p>
 
-<p class="letter-text">
-So then, my feelings for you are real, and they led me to this situation wherein I have an undying love for you.
-</p>
+            </button>
 
-<p class="letter-text">
-I love you, my love.
-</p>
 
-<p class="letter-text">
-And if one day these words become just another message buried beneath countless others, I hope you’ll remember that they came from a heart that found its peace in yours.
-</p>
+            <!-- 8TH MONTH LETTER -->
+            <button class="letter-option" onclick="openLetter('eighth')">
 
-<p class="letter-text">
-Yours, always,<br><br>
-Franz ❤️
-</p>
+                <div class="envelope-icon">
+                    💗
+                </div>
+
+                <h2>Our 8th Month</h2>
+
+                <p>
+                    A new little piece of my heart.
+                </p>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         ORIGINAL FIRST LETTER
+         ========================================= -->
+
+    <div class="letter-card hidden-letter" id="first-letter">
+
+        <button class="back-button letter-back" onclick="showSelection()">
+            ← Back to Letters
+        </button>
+
+        <h1>For You ❤️</h1>
+
+        <div class="letter-content">
+
+            <p class="letter-text">
+                Hi mahal, to be honest, I do not really know what I should write or say to you. The pressure of thinking of pleasing you always and thinking that a simple letter wouldn’t impress you keeps crushing me. But maybe I guess I will just let my heart speak.
+            </p>
+
+            <p class="letter-text">
+                The moment my feelings developed for you, I always knew life would be very peaceful. I saw peace in your eyes and I saw forever in your smiles. I had sleepless nights thinking about how our life could be if we end up loving each other. And now I kept having sleepless nights working for us to secure our future haha. I just love how things are still the same but with a different goal.
+            </p>
+
+            <p class="letter-text">
+                My heart never lies, and I always follow it. Right from the very moment my heart beat skips, I knew I’m in love with you. But that’s a childish thing to say, so I tried to prove it.
+            </p>
+
+            <p class="letter-text">
+                I spoke with you.
+            </p>
+
+            <p class="letter-text">
+                I bonded with you.
+            </p>
+
+            <p class="letter-text">
+                I dated you.
+            </p>
+
+            <p class="letter-text">
+                And I tried my best to know more about you.
+            </p>
+
+            <p class="letter-text">
+                It seems to me that the more deeply I dive, the more I cultivate my feelings.
+            </p>
+
+            <p class="letter-text">
+                I’m always so nervous when you’re trying to ask me “why do you love me?” Or when you were asking me “give me reasons why you love me.” I really don’t know and I’m just too pressured that I might not satisfy your expectations or you might not be impressed by how shallow my words could be when being asked on the spot huhu.
+            </p>
+
+            <p class="letter-text">
+                But maybe with this, I hope you know that my love for you is genuine. You said feelings fade, right? Well, maybe they do, I agree. Feelings are transient—they visit and depart. Love, however, is not measured by the intensity of emotion but by the constancy of devotion. If feelings are the spark, love is the flame that continues to burn long after the spark has disappeared.
+            </p>
+
+            <p class="letter-text">
+                So then, my feelings for you are real, and they led me to this situation wherein I have an undying love for you.
+            </p>
+
+            <p class="letter-text">
+                I love you, my love.
+            </p>
+
+            <p class="letter-text">
+                And if one day these words become just another message buried beneath countless others, I hope you’ll remember that they came from a heart that found its peace in yours.
+            </p>
+
+            <p class="letter-text">
+                Yours, always,<br><br>
+                Franz ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         OUR 8TH MONTH LETTER
+         ========================================= -->
+
+    <div class="letter-card hidden-letter" id="eighth-letter">
+
+        <button class="back-button letter-back" onclick="showSelection()">
+            ← Back to Letters
+        </button>
+
+        <h1>Our 8th Month ❤️</h1>
+
+        <div class="letter-content">
+
+            <p class="letter-text">
+                Hello my love! Happy 8th Months of love!
+            </p>
+
+            <p class="letter-text">
+                I’m really not good with letters I’m gonna be honest because I just can’t keep up with how deep my feelings are for you. I don’t even know how to start but somehow I just kept typing.
+            </p>
+
+            <p class="letter-text">
+                Sometimes I find it funny how quickly eight months can pass. It feels like just yesterday when I was putting together that first letter for you, trying to find the right words to put into a little corner of the internet just so I could give you something that was ours. And now here we are, eight months later, with so many more memories, conversations, laughs, little moments, and yes… even arguments that somehow became part of our story.
+            </p>
+
+            <p class="letter-text">
+                I think one of the things I love about us is that we reached the point where we’re no longer just discovering each other through questions.
+            </p>
+
+            <p class="letter-text">
+                I remember how we used to ask each other all sorts of random things. Sometimes serious, sometimes ridiculous, sometimes questions that made us wonder, “Why are you even asking me this?” But somehow, those little questions became one of the ways we learned each other.
+            </p>
+
+            <p class="letter-text">
+                And I know you’ve noticed that I’ve been asking less of those questions lately.
+            </p>
+
+            <p class="letter-text">
+                I hope you never mistake that for me becoming less interested in you.
+            </p>
+
+            <p class="letter-text">
+                Because honestly, I think I’ve just reached a different kind of knowing.
+            </p>
+
+            <p class="letter-text">
+                Before, I learned about you by asking.
+            </p>
+
+            <p class="letter-text">
+                Now, I learn about you by being with you.
+            </p>
+
+            <p class="letter-text">
+                I notice the little things. The things you do without thinking. The way you react to certain things. The little changes in your mood. The things that make you laugh. The things that annoy you. The things you’re confident about and the things you’re not. Sometimes I don’t even realize I’m learning something about you until later, when I catch myself thinking, “Ah, that’s just my Lovie.”
+            </p>
+
+            <p class="letter-text">
+                And maybe that’s one of the quietest forms of love—to know someone not because they answered every question, but because you’ve spent enough time beside them to recognize the little pieces of them without needing to ask.
+            </p>
+
+            <p class="letter-text">
+                So if you ever feel like the questions are fading, I hope you know that my curiosity about you isn’t.
+            </p>
+
+            <p class="letter-text">
+                If anything, I think I’m just enjoying discovering you in a different way.
+            </p>
+
+            <p class="letter-text">
+                And of all the things I’ve discovered about you, one of the things I appreciate the most is how much you’re willing to do just to make me happy.
+            </p>
+
+            <p class="letter-text">
+                Sometimes you do things even when you’re not completely confident about them. And maybe to you, they’re just little things. But to me, they mean so much because I know that somewhere behind that little effort is you thinking, “I want to make him happy.”
+            </p>
+
+            <p class="letter-text">
+                And I don’t think I’ll ever take that for granted.
+            </p>
+
+            <p class="letter-text">
+                I love that you try.
+            </p>
+
+            <p class="letter-text">
+                I love that even when something isn’t easy or doesn’t come naturally to you, you’re still willing to meet me halfway just because it matters to me. There’s something incredibly beautiful about being loved by someone who doesn’t always know exactly what to do, but chooses to try anyway.
+            </p>
+
+            <p class="letter-text">
+                And of course, we’re not perfect.
+            </p>
+
+            <p class="letter-text">
+                Eight months have taught us that love isn’t just about the cute conversations, the sweet moments, and the times when everything feels easy. We’ve argued. We’ve misunderstood each other. We’ve had moments when our feelings got in the way of our words.
+            </p>
+
+            <p class="letter-text">
+                But somehow, those moments have also taught me something.
+            </p>
+
+            <p class="letter-text">
+                We’re not just two people who like each other.
+            </p>
+
+            <p class="letter-text">
+                We’re two people learning how to love each other.
+            </p>
+
+            <p class="letter-text">
+                And maybe that’s a little messier.
+            </p>
+
+            <p class="letter-text">
+                A little louder.
+            </p>
+
+            <p class="letter-text">
+                Sometimes a little more complicated.
+            </p>
+
+            <p class="letter-text">
+                But also more real.
+            </p>
+
+            <p class="letter-text">
+                I don’t expect us to never argue. I don’t expect us to always understand each other perfectly. What I want is for us to keep choosing to understand each other after the argument. To keep talking. To keep learning. To keep finding our way back to each other.
+            </p>
+
+            <p class="letter-text">
+                Because if the first few months were about discovering who you are, maybe these months are about discovering who we are together.
+            </p>
+
+            <p class="letter-text">
+                And honestly, I really like who we are becoming.
+            </p>
+
+            <p class="letter-text">
+                So, mahal, thank you.
+            </p>
+
+            <p class="letter-text">
+                Thank you for the random questions that started teaching me about you.
+            </p>
+
+            <p class="letter-text">
+                Thank you for the little things you do that you probably don’t even realize I notice.
+            </p>
+
+            <p class="letter-text">
+                Thank you for trying, even when you’re unsure.
+            </p>
+
+            <p class="letter-text">
+                Thank you for making me laugh, for letting me see the parts of you that aren’t always easy to show, and for allowing me to be part of your everyday life.
+            </p>
+
+            <p class="letter-text">
+                And thank you for staying—even through the imperfect parts.
+            </p>
+
+            <p class="letter-text">
+                Two months ago, I wrote you a letter because I wanted to put my feelings somewhere you could keep them.
+            </p>
+
+            <p class="letter-text">
+                Two months later, I think I have even more feelings than words to put down.
+            </p>
+
+            <p class="letter-text">
+                Maybe that’s the funny thing about loving someone.
+            </p>
+
+            <p class="letter-text">
+                You start with a thousand questions because you want to know everything about them.
+            </p>
+
+            <p class="letter-text">
+                Then, little by little, you spend enough time together that some answers stop needing to be asked.
+            </p>
+
+            <p class="letter-text">
+                You simply learn them.
+            </p>
+
+            <p class="letter-text">
+                And somehow, in between all those questions, conversations, laughs, dates, arguments, and ordinary days…
+            </p>
+
+            <p class="letter-text">
+                I found myself falling a little more in love with you.
+            </p>
+
+            <p class="letter-text">
+                Not just with the person I met eight months ago,
+            </p>
+
+            <p class="letter-text">
+                but with the person I continue to discover every day.
+            </p>
+
+            <p class="letter-text">
+                And I hope I get to keep discovering you for a very, very long time.
+            </p>
+
+            <p class="letter-text">
+                Here’s to another month of annoying each other, making each other laugh, asking weird questions, learning each other’s little habits, surviving our arguments, and somehow still choosing each other at the end of the day.
+            </p>
+
+            <p class="letter-text">
+                I love you.
+            </p>
+
+            <p class="letter-text">
+                And if I ever ask you fewer questions, don’t worry.
+            </p>
+
+            <p class="letter-text">
+                I’m probably just sitting there quietly, watching you, learning you the old-fashioned way.
+            </p>
+
+            <p class="letter-text">
+                One little detail at a time.
+            </p>
+
+            <p class="letter-text">
+                Always yours,<br><br>
+                Mahal ❤️
+            </p>
+
+        </div>
+
+    </div>
+
 
 </div>
 
-</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
