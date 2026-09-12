@@ -13,10 +13,6 @@
 
 <div class="container letter-page">
 
-<!-- ============================= -->
-<!-- LETTER SELECTION              -->
-<!-- ============================= -->
-
 <div id="letter-selection">
 
 <a href="index.html" class="back-button">
@@ -35,7 +31,7 @@ Which letter would you like to open?
 
 <div class="letter-options">
 
-<button type="button" class="letter-option" id="firstLetterButton">
+<a href="#first-letter" class="letter-option">
 
 <span class="letter-icon">💌</span>
 
@@ -45,10 +41,10 @@ Which letter would you like to open?
 The letter I wrote from my heart.
 </p>
 
-</button>
+</a>
 
 
-<button type="button" class="letter-option" id="eighthLetterButton">
+<a href="#eighth-letter" class="letter-option">
 
 <span class="letter-icon">💗</span>
 
@@ -58,22 +54,20 @@ The letter I wrote from my heart.
 A new little piece of my heart.
 </p>
 
-</button>
+</a>
 
 </div>
 
 </div>
 
 
-<!-- ============================= -->
-<!-- FIRST LETTER                  -->
-<!-- ============================= -->
+<!-- FIRST LETTER -->
 
-<div class="letter-card hidden-letter" id="first-letter">
+<div class="letter-card" id="first-letter">
 
-<button type="button" class="back-button letter-back" id="firstBackButton">
+<a href="letter.html" class="back-button">
 ← Back to Letters
-</button>
+</a>
 
 <h1>For You ❤️</h1>
 
@@ -141,15 +135,13 @@ Franz ❤️
 </div>
 
 
-<!-- ============================= -->
-<!-- 8TH MONTH LETTER              -->
-<!-- ============================= -->
+<!-- 8TH MONTH LETTER -->
 
-<div class="letter-card hidden-letter" id="eighth-letter">
+<div class="letter-card" id="eighth-letter">
 
-<button type="button" class="back-button letter-back" id="eighthBackButton">
+<a href="letter.html" class="back-button">
 ← Back to Letters
-</button>
+</a>
 
 <h1>Our 8th Month ❤️</h1>
 
@@ -377,105 +369,6 @@ Mahal ❤️
 </div>
 
 </div>
-
-
-<!-- ============================= -->
-<!-- LETTER CONTROLS               -->
-<!-- ============================= -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const selection = document.getElementById("letter-selection");
-
-    const firstButton = document.getElementById("firstLetterButton");
-    const eighthButton = document.getElementById("eighthLetterButton");
-
-    const firstLetter = document.getElementById("first-letter");
-    const eighthLetter = document.getElementById("eighth-letter");
-
-    const firstBackButton = document.getElementById("firstBackButton");
-    const eighthBackButton = document.getElementById("eighthBackButton");
-
-
-    function hideAllLetters() {
-
-        firstLetter.classList.remove("show-letter");
-        eighthLetter.classList.remove("show-letter");
-
-        firstLetter.style.display = "none";
-        eighthLetter.style.display = "none";
-
-    }
-
-
-    function openSelectedLetter(letter) {
-
-        hideAllLetters();
-
-        selection.style.display = "none";
-
-        if (letter === "first") {
-
-            firstLetter.style.display = "block";
-
-            setTimeout(function () {
-                firstLetter.classList.add("show-letter");
-            }, 20);
-
-        }
-
-
-        if (letter === "eighth") {
-
-            eighthLetter.style.display = "block";
-
-            setTimeout(function () {
-                eighthLetter.classList.add("show-letter");
-            }, 20);
-
-        }
-
-
-        window.scrollTo(0, 0);
-
-    }
-
-
-    function returnToSelection() {
-
-        hideAllLetters();
-
-        selection.style.display = "block";
-
-        window.scrollTo(0, 0);
-
-    }
-
-
-    firstButton.addEventListener("click", function () {
-        openSelectedLetter("first");
-    });
-
-
-    eighthButton.addEventListener("click", function () {
-        openSelectedLetter("eighth");
-    });
-
-
-    firstBackButton.addEventListener("click", function () {
-        returnToSelection();
-    });
-
-
-    eighthBackButton.addEventListener("click", function () {
-        returnToSelection();
-    });
-
-});
-
-</script>
 
 </body>
 </html>
