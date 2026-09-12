@@ -1,6 +1,7 @@
 // =============================
 // Anniversary Counter
 // =============================
+
 const anniversary = new Date("2026-01-13T00:00:00");
 
 function updateCounter() {
@@ -12,8 +13,14 @@ function updateCounter() {
 
     if (days < 0) {
         months--;
-        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-        days += prevMonth.getDate();
+
+        const previousMonth = new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            0
+        );
+
+        days += previousMonth.getDate();
     }
 
     if (months < 0) {
@@ -33,40 +40,47 @@ updateCounter();
 
 
 // =============================
-// Smooth Page Transition
+// Smooth Home → Letter Transition
 // =============================
-const openLetter = document.getElementById("openLetter");
 
-if (openLetter) {
-    openLetter.addEventListener("click", function (e) {
-        e.preventDefault();
+const homeLetterButton = document.getElementById("openLetter");
+
+if (homeLetterButton) {
+
+    homeLetterButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
 
         document.body.style.opacity = "0";
         document.body.style.transition = "opacity .45s ease";
 
         setTimeout(() => {
-            window.location.href = this.href;
+            window.location.href = homeLetterButton.href;
         }, 450);
+
     });
+
 }
 
 
 // =============================
-// Letter Selection
+// Open Selected Letter
 // =============================
 
-function openLetter(letter) {
+function showLetter(letter) {
 
     const selection = document.getElementById("letter-selection");
     const firstLetter = document.getElementById("first-letter");
     const eighthLetter = document.getElementById("eighth-letter");
 
-    // Hide the selection screen
+
+    // Hide the letter selection screen
     if (selection) {
         selection.style.display = "none";
     }
 
-    // Hide both letters first
+
+    // Hide both letters
     if (firstLetter) {
         firstLetter.classList.remove("show-letter");
         firstLetter.style.display = "none";
@@ -77,28 +91,36 @@ function openLetter(letter) {
         eighthLetter.style.display = "none";
     }
 
-    // Show the selected letter
+
+    // Open the selected letter
     if (letter === "first" && firstLetter) {
+
         firstLetter.style.display = "block";
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             firstLetter.classList.add("show-letter");
-        }, 10);
+        });
+
     }
+
 
     if (letter === "eighth" && eighthLetter) {
+
         eighthLetter.style.display = "block";
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             eighthLetter.classList.add("show-letter");
-        }, 10);
+        });
+
     }
 
-    // Start at the top of the selected letter
+
+    // Always start at the top
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 
@@ -112,38 +134,40 @@ function showSelection() {
     const firstLetter = document.getElementById("first-letter");
     const eighthLetter = document.getElementById("eighth-letter");
 
-    // Hide both letters
+
+    // Hide the first letter
     if (firstLetter) {
         firstLetter.classList.remove("show-letter");
         firstLetter.style.display = "none";
     }
 
+
+    // Hide the eighth-month letter
     if (eighthLetter) {
         eighthLetter.classList.remove("show-letter");
         eighthLetter.style.display = "none";
     }
 
-    // Show selection screen
+
+    // Show the selection screen
     if (selection) {
         selection.style.display = "block";
-        selection.style.animation = "none";
-
-        setTimeout(() => {
-            selection.style.animation = "fade .5s ease";
-        }, 10);
     }
+
 
     // Return to the top
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 
 // =============================
-// Fade in every page
+// Page Fade In
 // =============================
+
 window.addEventListener("pageshow", () => {
     document.body.style.opacity = "1";
 });
