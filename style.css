@@ -16,10 +16,11 @@ body{
     overflow-y:auto;
     overflow:visible;
     color:#444;
-}
 
-.container{
-    margin:40px auto;
+    opacity:0;
+    animation:
+        bgMove 12s ease infinite,
+        pageFade .8s ease forwards;
 }
 
 .container{
@@ -34,6 +35,7 @@ body{
     text-align:center;
     box-shadow:0 10px 40px rgba(0,0,0,.12);
     border:1px solid rgba(255,255,255,.5);
+    transition:.3s ease;
 }
 
 .container:hover{
@@ -52,6 +54,11 @@ h1{
     line-height:1.8;
     margin-bottom:25px;
 }
+
+
+/* ============================= */
+/* MAIN BUTTON                   */
+/* ============================= */
 
 .button{
     display:inline-block;
@@ -77,28 +84,10 @@ h1{
     transform:scale(.96);
 }
 
-.letter-content{
-    text-align:left;
-    margin-top:30px;
-    line-height:1.9;
-    animation:fade .5s ease;
-}
 
-.letter-content p{
-    text-align:justify;
-    text-justify:inter-word;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+/* ============================= */
+/* ANNIVERSARY COUNTER           */
+/* ============================= */
 
 #counter{
     margin-top:20px;
@@ -113,11 +102,10 @@ h1{
     box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+
+/* ============================= */
+/* LETTER PAGE                   */
+/* ============================= */
 
 .letter-page{
     max-width:900px;
@@ -125,40 +113,9 @@ h1{
     margin:40px auto;
 }
 
-.letter-card{
-    width:100%;
-    background:white;
-    border-radius:25px;
-    padding:45px 15px;
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-}
-
-.back-button{
-    display:inline-block;
-    margin-bottom:20px;
-    color:#d85b94;
-    text-decoration:none;
-    font-weight:bold;
-    background:none;
-    border:none;
-    padding:0;
-    font-size:inherit;
-    cursor:pointer;
-}
-
-.back-button:hover{
-    opacity:.8;
-}
-
-.letter-text{
-    text-align:justify;
-    line-height:2;
-    margin-bottom:24px;
-}
-
 
 /* ============================= */
-/* LETTER SELECTION SCREEN       */
+/* LETTER SELECTION              */
 /* ============================= */
 
 #letter-selection{
@@ -170,21 +127,25 @@ h1{
 }
 
 #letter-selection .subtitle{
-    margin-bottom:30px;
+    margin-bottom:15px;
 }
 
 .letter-question{
     color:#666;
     font-size:17px;
+    line-height:1.8;
     margin-bottom:25px;
 }
 
 
-/* Envelope choices */
+/* ============================= */
+/* LETTER OPTIONS                */
+/* ============================= */
 
 .letter-options{
     display:flex;
     justify-content:center;
+    align-items:stretch;
     gap:20px;
     flex-wrap:wrap;
 }
@@ -195,13 +156,25 @@ h1{
     padding:25px 20px;
     border:none;
     border-radius:25px;
+
     background:rgba(255,255,255,.65);
     border:1px solid rgba(255,255,255,.75);
+
     box-shadow:0 10px 30px rgba(0,0,0,.08);
+
     color:#555;
     cursor:pointer;
-    transition:.3s ease;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
     text-align:center;
+
+    -webkit-tap-highlight-color:transparent;
+    appearance:none;
+    -webkit-appearance:none;
 }
 
 .letter-option:hover{
@@ -214,11 +187,20 @@ h1{
     transform:scale(.97);
 }
 
+.letter-option:focus{
+    outline:none;
+}
+
+.letter-option:focus-visible{
+    outline:3px solid rgba(216,91,148,.25);
+    outline-offset:3px;
+}
+
 .letter-icon{
+    display:block;
     font-size:48px;
     line-height:1;
     margin-bottom:15px;
-    display:block;
 }
 
 .letter-option h2{
@@ -234,37 +216,131 @@ h1{
 }
 
 
-/* Hide letters until selected */
+/* ============================= */
+/* LETTER CARD                   */
+/* ============================= */
+
+.letter-card{
+    width:100%;
+    background:white;
+    border-radius:25px;
+    padding:45px 15px;
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.letter-content{
+    text-align:left;
+    margin-top:30px;
+    line-height:1.9;
+}
+
+.letter-content p{
+    text-align:justify;
+    text-justify:inter-word;
+}
+
+.letter-text{
+    text-align:justify;
+    line-height:2;
+    margin-bottom:24px;
+}
+
+
+/* ============================= */
+/* BACK BUTTON                   */
+/* ============================= */
+
+.back-button{
+    display:inline-block;
+    margin-bottom:20px;
+
+    color:#d85b94;
+    text-decoration:none;
+    font-weight:bold;
+
+    background:none;
+    border:none;
+    padding:0;
+
+    font-size:inherit;
+    font-family:inherit;
+
+    cursor:pointer;
+}
+
+.back-button:hover{
+    opacity:.8;
+}
+
+.back-button:active{
+    transform:scale(.97);
+}
+
+.back-button:focus{
+    outline:none;
+}
+
+.back-button:focus-visible{
+    outline:3px solid rgba(216,91,148,.2);
+    outline-offset:4px;
+    border-radius:5px;
+}
+
+
+/* ============================= */
+/* HIDDEN / OPEN LETTERS         */
+/* ============================= */
 
 .hidden-letter{
     display:none;
 }
-
-
-/* Make the selected letter appear smoothly */
 
 .hidden-letter.show-letter{
     display:block;
     animation:letterOpen .5s ease;
 }
 
-@keyframes letterOpen{
+
+/* ============================= */
+/* ANIMATIONS                    */
+/* ============================= */
+
+@keyframes fade{
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
+@keyframes letterOpen{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
 
-/* Smooth page load */
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-body{
-    opacity:0;
-    animation:pageFade .8s ease forwards;
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 }
 
 @keyframes pageFade{
@@ -272,6 +348,7 @@ body{
         opacity:0;
         transform:translateY(15px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -280,7 +357,7 @@ body{
 
 
 /* ============================= */
-/* MOBILE                        */
+/* MOBILE                       */
 /* ============================= */
 
 @media (max-width:600px){
@@ -300,8 +377,21 @@ body{
         font-size:1.7rem;
     }
 
+    .subtitle{
+        line-height:1.7;
+    }
+
+    .letter-page{
+        width:92%;
+        margin:25px auto;
+    }
+
     .letter-card{
         padding:35px 15px;
+    }
+
+    .letter-content{
+        margin-top:25px;
     }
 
     .letter-text{
@@ -318,6 +408,7 @@ body{
     .letter-option{
         width:100%;
         max-width:300px;
+        min-height:180px;
     }
 
 }
