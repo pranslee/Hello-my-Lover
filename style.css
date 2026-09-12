@@ -139,6 +139,11 @@ h1{
     color:#d85b94;
     text-decoration:none;
     font-weight:bold;
+    background:none;
+    border:none;
+    padding:0;
+    font-size:inherit;
+    cursor:pointer;
 }
 
 .back-button:hover{
@@ -151,7 +156,112 @@ h1{
     margin-bottom:24px;
 }
 
+
+/* ============================= */
+/* LETTER SELECTION SCREEN       */
+/* ============================= */
+
+#letter-selection{
+    animation:fade .5s ease;
+}
+
+#letter-selection h1{
+    margin-bottom:10px;
+}
+
+#letter-selection .subtitle{
+    margin-bottom:30px;
+}
+
+.letter-question{
+    color:#666;
+    font-size:17px;
+    margin-bottom:25px;
+}
+
+
+/* Envelope choices */
+
+.letter-options{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.letter-option{
+    width:240px;
+    min-height:190px;
+    padding:25px 20px;
+    border:none;
+    border-radius:25px;
+    background:rgba(255,255,255,.65);
+    border:1px solid rgba(255,255,255,.75);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    color:#555;
+    cursor:pointer;
+    transition:.3s ease;
+    text-align:center;
+}
+
+.letter-option:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 40px rgba(216,91,148,.18);
+    background:rgba(255,255,255,.85);
+}
+
+.letter-option:active{
+    transform:scale(.97);
+}
+
+.letter-icon{
+    font-size:48px;
+    line-height:1;
+    margin-bottom:15px;
+    display:block;
+}
+
+.letter-option h2{
+    color:#d85b94;
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.letter-option p{
+    color:#777;
+    font-size:14px;
+    line-height:1.6;
+}
+
+
+/* Hide letters until selected */
+
+.hidden-letter{
+    display:none;
+}
+
+
+/* Make the selected letter appear smoothly */
+
+.hidden-letter.show-letter{
+    display:block;
+    animation:letterOpen .5s ease;
+}
+
+@keyframes letterOpen{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
 /* Smooth page load */
+
 body{
     opacity:0;
     animation:pageFade .8s ease forwards;
@@ -166,4 +276,48 @@ body{
         opacity:1;
         transform:translateY(0);
     }
+}
+
+
+/* ============================= */
+/* MOBILE                        */
+/* ============================= */
+
+@media (max-width:600px){
+
+    body{
+        padding:20px 0;
+    }
+
+    .container{
+        width:92%;
+        margin:25px auto;
+        padding:20px 15px;
+        border-radius:25px;
+    }
+
+    h1{
+        font-size:1.7rem;
+    }
+
+    .letter-card{
+        padding:35px 15px;
+    }
+
+    .letter-text{
+        line-height:1.9;
+        margin-bottom:22px;
+    }
+
+    .letter-options{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .letter-option{
+        width:100%;
+        max-width:300px;
+    }
+
 }
