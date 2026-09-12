@@ -154,7 +154,7 @@ h1{
     width:240px;
     min-height:190px;
     padding:25px 20px;
-    border:none;
+
     border-radius:25px;
 
     background:rgba(255,255,255,.65);
@@ -172,9 +172,14 @@ h1{
 
     text-align:center;
 
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
     -webkit-tap-highlight-color:transparent;
-    appearance:none;
-    -webkit-appearance:none;
 }
 
 .letter-option:hover{
@@ -185,15 +190,6 @@ h1{
 
 .letter-option:active{
     transform:scale(.97);
-}
-
-.letter-option:focus{
-    outline:none;
-}
-
-.letter-option:focus-visible{
-    outline:3px solid rgba(216,91,148,.25);
-    outline-offset:3px;
 }
 
 .letter-icon{
@@ -217,7 +213,7 @@ h1{
 
 
 /* ============================= */
-/* LETTER CARD                   */
+/* LETTER CARDS                  */
 /* ============================= */
 
 .letter-card{
@@ -226,7 +222,29 @@ h1{
     border-radius:25px;
     padding:45px 15px;
     box-shadow:0 12px 35px rgba(0,0,0,.12);
+
+    display:none;
 }
+
+
+/* Show selected letter */
+
+.letter-card:target{
+    display:block;
+    animation:letterOpen .5s ease;
+}
+
+
+/* Hide selection when a letter is open */
+
+body:has(.letter-card:target) #letter-selection{
+    display:none;
+}
+
+
+/* ============================= */
+/* LETTER CONTENT                */
+/* ============================= */
 
 .letter-content{
     text-align:left;
@@ -258,14 +276,9 @@ h1{
     text-decoration:none;
     font-weight:bold;
 
-    background:none;
-    border:none;
-    padding:0;
-
-    font-size:inherit;
-    font-family:inherit;
-
     cursor:pointer;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 .back-button:hover{
@@ -274,30 +287,6 @@ h1{
 
 .back-button:active{
     transform:scale(.97);
-}
-
-.back-button:focus{
-    outline:none;
-}
-
-.back-button:focus-visible{
-    outline:3px solid rgba(216,91,148,.2);
-    outline-offset:4px;
-    border-radius:5px;
-}
-
-
-/* ============================= */
-/* HIDDEN / OPEN LETTERS         */
-/* ============================= */
-
-.hidden-letter{
-    display:none;
-}
-
-.hidden-letter.show-letter{
-    display:block;
-    animation:letterOpen .5s ease;
 }
 
 
